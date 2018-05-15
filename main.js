@@ -74,14 +74,8 @@ if (window.self === window.top) {
 } else {
 	var toolbarOptions = [
 		['bold', 'italic', 'underline', 'strike'],
-		['blockquote', 'code-block'],
-		[{ 'list': 'ordered'}, { 'list': 'bullet' }],
-		[{ 'indent': '-1'}, { 'indent': '+1' }],
-		[{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-		[{ 'color': [] }, { 'background': [] }],
-		['clean'],
-		['link', 'image', 'video'],
-		['showHtml']
+		[{ 'color': [] }, { 'background': [] }]
+		
 	];
 
 	var quill = new Quill('#editor-container', {
@@ -94,6 +88,8 @@ if (window.self === window.top) {
 	var sdk = new BlockSDK(['blocktester.herokuapp.com', 'localhost', 'marketingcloudapps.com'], true);
 
 	sdk.getContent(function (content) {
+		
+
 		quill.root.innerHTML = content;
 
 		function saveText() {
@@ -116,7 +112,7 @@ if (window.self === window.top) {
 			});
 		}
 
-		quill.on('text-change', saveText);
+		//quill.on('text-change', saveText);
 	});
 }
 
