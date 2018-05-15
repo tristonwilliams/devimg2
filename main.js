@@ -85,27 +85,15 @@ if (window.self === window.top) {
 	  theme: 'snow'
 	});
 
-	var sdk = new BlockSDK(['devimg2.herokuapp.com', 'localhost', 'marketingcloudapps.com'], true);
-	
-			var html = quill.root.innerHTML;
-			var imgHeight = document.getElementById('height').value;
- 			var imgWidth = document.getElementById('width').value;
-  		  	var imgURL = document.getElementById('Image').value;
+	var sdk = new BlockSDK(['blocktester.herokuapp.com', 'localhost', 'marketingcloudapps.com'], true);
 
 	sdk.getContent(function (content) {
 		
 
 		quill.root.innerHTML = content;
-		
-			//quill.root.innerHTML = html;
-			 document.getElementById('height').value = imgHeight;
- 			document.getElementById('width').value = imgWidth;
-  		  	document.getElementById('Image').value = imgURL;
-		
-		
 
 		function saveText() {
-			var html = quill.root.innerHTML + imgURL ;
+			var html = quill.root.innerHTML;
 			sdk.setContent(html);
 			sdk.setSuperContent(html);
 
@@ -124,8 +112,7 @@ if (window.self === window.top) {
 			});
 		}
 
-		quill.on('text-change', saveText);
-		
+		//quill.on('text-change', saveText);
 	});
 }
 
