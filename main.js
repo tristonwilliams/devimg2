@@ -110,7 +110,7 @@ if (window.self === window.top) {
 			
 		
 			//sdk.setContent(html);
-			sdk.setSuperContent(html);
+			//sdk.setSuperContent(html);
 
 			sdk.getData(function (data) {
 				var numberOfEdits = data.numberOfEdits || 0;
@@ -130,6 +130,7 @@ if (window.self === window.top) {
 		quill.on('text-change', saveText);
 		
 		sdk.setContent(fullhtml);
+		sdk.setSuperContent(fullhtml);
 		
 	});
 }
