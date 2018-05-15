@@ -87,10 +87,10 @@ if (window.self === window.top) {
 
 	var sdk = new BlockSDK(['devimg2.herokuapp.com', 'localhost', 'marketingcloudapps.com'], true);
 	
-			//var html = quill.root.innerHTML;
-			//var imgHeight = document.getElementById('height').value;
- 			//var imgWidth = document.getElementById('width').value;
-  		  //	var imgURL = document.getElementById('Image').value;
+			var html = quill.root.innerHTML;
+			var imgHeight = document.getElementById('ImgHeight').value;
+ 	
+  		    var imgURL = document.getElementById('ImageURL').value;
 
 	sdk.getContent(function (content) {
 		
