@@ -106,11 +106,14 @@ if (window.self === window.top) {
 
 		function saveText() {
 			var html = quill.root.innerHTML ;
-			
+			document.getElementById('ImgHeight').value = imgHeight;
+ 			
+  		  	document.getElementById('ImageURL').value = imgURL;
 			
 		
-			//sdk.setContent(html);
-			//sdk.setSuperContent(html);
+			sdk.setContent(fullhtml);
+		sdk.setSuperContent(fullhtml);
+		
 
 			sdk.getData(function (data) {
 				var numberOfEdits = data.numberOfEdits || 0;
